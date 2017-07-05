@@ -38,6 +38,7 @@
                 <th>银行名称</th>
                 <th>账户名</th>
                 <th>费用托收内容</th>
+                <th>操作</th>
             </tr>
         </thead>
         <tbody>
@@ -46,6 +47,16 @@
                 <td>2016-11-29</td>
                 <td>人生就像是一场修行</td>
                 <td>人生就像是一场修行</td>
+                <td class="p-t-blue">
+                    <a id="update0" class="p-t-blue" href="javascript:;">
+                        修改
+                    </a> |
+
+                    <a class="p-t-blue" href="javascript:;">
+                        删除
+                    </a>
+
+                </td>
             </tr>
         </tbody>
 
@@ -71,7 +82,7 @@
             <th>车辆颜色</th>
             <th>行驶证号</th>
             <th>停车卡号码</th>
-            <th>备注</th>
+            <th>操作</th>
         </tr>
         </thead>
         <tbody>
@@ -82,7 +93,17 @@
             <td>红</td>
             <td>12454512</td>
             <td>12454512</td>
-            <td>无</td>
+
+            <td class="p-t-blue">
+                <a id="update1" class="p-t-blue" href="javascript:;">
+                    修改
+                </a> |
+
+                <a class="p-t-blue" href="javascript:;">
+                    删除
+                </a>
+
+            </td>
         </tr>
         </tbody>
 
@@ -109,6 +130,7 @@
             <th>联系电话</th>
             <th>身份证号码</th>
             <th>成员照片</th>
+            <th>操作</th>
         </tr>
         </thead>
         <tbody>
@@ -121,6 +143,16 @@
             <td>38255456454512124545</td>
             <td>
                 <img src="" height="40" width="40" alt="">
+            </td>
+            <td class="p-t-blue">
+                <a id="update2" class="p-t-blue" href="javascript:;">
+                    修改
+                </a> |
+
+                <a class="p-t-blue" href="javascript:;">
+                    删除
+                </a>
+
             </td>
         </tr>
         </tbody>
@@ -181,21 +213,23 @@
 
         //模态框
         
-        $("#bankAdd").click(function () {
+        $("#bankAdd ,#update0").click(function () {
             model('idone',layer,'银行托收账号信息','./model/bank-model.html',function (index,layero) {
                 console.log(index,layero);
             })
         })
-        $("#carAdd").click(function () {
+
+        $("#carAdd ,#update1").click(function () {
             model('idtwo',layer,'车辆信息','./model/car-model.html',function (index,layero) {
                 console.log(index,layero);
             })
         })
-        $("#houseAdd").click(function () {
+        $("#houseAdd ,#update2 ").click(function () {
             model('idthree',layer,'家庭成员（房屋居住人）信息','./model/house-model.html',function (index,layero) {
                 console.log(index,layero);
             })
         })
+
         
 
 
