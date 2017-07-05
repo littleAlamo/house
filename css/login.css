@@ -1,0 +1,56 @@
+body,
+html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.bg {
+  height: 100%;
+  width: 100%;
+  background: url("../images/bg.png") no-repeat center center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  position: relative;
+}
+.login-main {
+  width: 950px;
+  height: 505px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -252.5px;
+  margin-left: -475px;
+}
+.login-main .lonin-name {
+  margin-bottom: 45px;
+}
+.login-main .login-left {
+  width: 50%;
+  height: 100%;
+  background: url("../images/l.png") center center no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -ms-background-size: cover;
+  padding-top: 160px;
+}
+.login-main .loin-right {
+  width: 50%;
+  background: #fff;
+  height: 100%;
+  padding-top: 100px;
+}
+.login-main .loin-right .login-btn {
+  padding-top: 30px;
+  width: 285px;
+  margin: 0 auto;
+}
+.login-main .loin-right .login-forget {
+  text-align: right;
+  padding-top: 10px;
+  width: 285px;
+  margin: 0 auto;
+}

@@ -1,0 +1,223 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/layui.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div  class=" p-bg-gray p-pad-b p-border-b">
+    <span class="layui-breadcrumb" >
+        <a href="javascript:;">当前位置</a>
+        <a href="javascript:;">系统管理</a>
+
+    </span>
+</div>
+<ul id="layuiNav" class="layui-nav">
+    <li class="layui-nav-item layui-this"><a href="javascript:;">银行托收账号信息</a></li>
+    <li class="layui-nav-item "><a href="javascript:;">车辆信息</a></li>
+    <li class="layui-nav-item"><a href="javascript:;">家庭成员（房屋居住人）信息</a></li>
+</ul>
+<div class="p-table on">
+    <div class="layui-clear">
+        <div class="p-left">
+            <a href="javascript:;" id="bankAdd" class="layui-btn  layui-btn-normal p-m-r">添加</a>
+
+        </div>
+
+    </div>
+    <table class="layui-table">
+        <thead>
+            <tr>
+                <th>账号</th>
+                <th>银行名称</th>
+                <th>账户名</th>
+                <th>费用托收内容</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="p-center">
+                <td>贤心</td>
+                <td>2016-11-29</td>
+                <td>人生就像是一场修行</td>
+                <td>人生就像是一场修行</td>
+            </tr>
+        </tbody>
+
+    </table>
+    <div class="p-text-right">
+        <div class="layui-box layui-laypage layui-laypage-molv" id="page"></div>
+    </div>
+</div>
+<div class="p-table">
+    <div class="layui-clear">
+        <div class="p-left">
+            <a href="javascript:;" id="carAdd" class="layui-btn  layui-btn-normal p-m-r">添加</a>
+
+        </div>
+
+    </div>
+    <table class="layui-table">
+        <thead>
+        <tr>
+            <th>车牌号码</th>
+            <th>车主姓名</th>
+            <th>车辆品牌/款式</th>
+            <th>车辆颜色</th>
+            <th>行驶证号</th>
+            <th>停车卡号码</th>
+            <th>备注</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="p-center">
+            <td>12154454</td>
+            <td>贤心</td>
+            <td>大众</td>
+            <td>红</td>
+            <td>12454512</td>
+            <td>12454512</td>
+            <td>无</td>
+        </tr>
+        </tbody>
+
+    </table>
+    <div class="p-text-right">
+        <div class="layui-box layui-laypage layui-laypage-molv"  id="pageTwo"></div>
+    </div>
+</div>
+<div class="p-table">
+    <div class="layui-clear">
+        <div class="p-left">
+            <a href="javascript:;" id="houseAdd" class="layui-btn  layui-btn-normal p-m-r">添加</a>
+
+        </div>
+
+    </div>
+    <table class="layui-table">
+        <thead>
+        <tr>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>出生日期</th>
+            <th>与业主之间关系</th>
+            <th>联系电话</th>
+            <th>身份证号码</th>
+            <th>成员照片</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="p-center">
+            <td>贤心</td>
+            <td>男</td>
+            <td>2016-11-29</td>
+            <td>人生</td>
+            <td>2011129</td>
+            <td>38255456454512124545</td>
+            <td>
+                <img src="" height="40" width="40" alt="">
+            </td>
+        </tr>
+        </tbody>
+
+    </table>
+    <div class="p-text-right">
+        <div class="layui-box layui-laypage layui-laypage-molv"  id="pageThree"></div>
+    </div>
+</div>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/layui.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script  type="text/javascript">
+    layui.use(['element','laypage','layer'],function () {
+        var element = layui.element();
+        var laypage = layui.laypage;
+        var layer = layui.layer;
+        //分页1
+        laypage({
+            cont: 'page',
+            pages: 20,
+            skip: true ,
+            jump:function (obj) {
+                var cur = obj.curr;//当前页
+                //alert(cur);
+            }
+
+        });
+        //分页2
+        laypage({
+            cont: 'pageTwo',
+            pages: 20,
+            skip: true ,
+            jump:function (obj) {
+                var cur = obj.curr;//当前页
+               // alert(cur);
+            }
+
+        });
+        //分页3
+        laypage({
+            cont: 'pageThree',
+            pages: 20,
+            skip: true ,
+            jump:function (obj) {
+                var cur = obj.curr;//当前页
+                //alert(cur);
+            }
+
+        });
+        //切换
+        $("#layuiNav li").click(function () {
+            $(this).addClass('layui-this').siblings("li").removeClass("layui-this");
+            var index = $(this).index();
+           $(".p-table").eq(index).addClass("on").siblings(".p-table").removeClass("on");
+
+        });
+
+        //模态框
+        
+        $("#bankAdd").click(function () {
+            model('idone',layer,'银行托收账号信息','./model/bank-model.html',function (index,layero) {
+                console.log(index,layero);
+            })
+        })
+        $("#carAdd").click(function () {
+            model('idtwo',layer,'车辆信息','./model/car-model.html',function (index,layero) {
+                console.log(index,layero);
+            })
+        })
+        $("#houseAdd").click(function () {
+            model('idthree',layer,'家庭成员（房屋居住人）信息','./model/house-model.html',function (index,layero) {
+                console.log(index,layero);
+            })
+        })
+        
+
+
+
+
+    })
+
+    function model(id,layer,title,url,callback) {
+        layer.open({
+            id:id,//唯一
+            type: 2,
+            title:title,
+            area:['50%','50%'],
+            btn:['确定' +
+            ''],
+            content:url,
+            yes: function(index, layero){
+                callback(index,layero);
+                layer.close(index); //如果设定了yes回调，需进行手工关闭
+            }
+        })
+    }
+</script>
+</body>
+</html>

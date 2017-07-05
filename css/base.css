@@ -1,0 +1,108 @@
+﻿/** 清除内外边距 **/
+body, h1, h2, h3, h4, h5, h6, hr, p,
+blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
+th, td, /* table elements 表格元素 */
+img/* img elements 图片元素 */,span,a{
+  border:medium none;
+  margin: 0;
+  padding: 0;
+ 
+}
+/** 设置默认字体 **/
+body,button, input, select, textarea {
+  font-family: Microsoft YaHei;
+  font-size: 14px;
+}
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+em{font-style:normal;}
+/** 重置列表元素 **/
+ul, ol { list-style: none; }
+/** 重置超链接元素 **/
+a { text-decoration: none; color:#969696;}
+
+ a:hover{opacity: 0.9;filter:alpha(opacity=90)}
+/** 重置图片元素 **/
+img{ border:0px;}
+/** 重置表格元素 **/
+table {  border-spacing: 0; }
+html,body{color:#616161;}
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+/*伪类方法，强力清除浮动*/
+.clear {
+  *zoom: 1;
+}
+.clear:after {
+  content: '';
+  display: block;
+  height: 0;
+  clear: both;
+}
+/*左浮动*/
+.left{
+  float: left;
+}
+/*右浮动*/
+.right{
+  float: right;
+}
+/*居中*/
+.center{
+  text-align: center;
+}
+.p-font-l{
+    font-size: 20px;
+}
+.pd{
+  padding: 10px;
+}
+
+.brImg{
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+.mb{
+  margin-bottom: 10px;
+}
+.mb-l{
+    margin-bottom: 30px;
+}
+.btn{
+    width: 100%;
+    color: #ffffff;
+    box-shadow: 0 3px 5px #afc3d0;
+    background: #0782d1;display: block;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    border-radius:30px;
+}
+.form-control{
+    padding: 9px 0;
+    height: 38px;
+    display: block;
+    width: 100%;
+    border: 1px solid #808080;
+    border-radius: 20px;
+    outline: none;
+    padding-left: 60px;
+}
+.form-addicon{
+    position: absolute;
+    left: 25px;
+    top:9px;
+}
+.form-input {
+    width: 285px;
+    margin: 0 auto;
+
+
+    position: relative;
+}
